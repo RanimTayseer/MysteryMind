@@ -1,0 +1,106 @@
+# Start the game
+print("╔══════════════════════════════════╗")
+print("║  Welcome to MysteryMind Game!   ║")
+print("║ Every choice will affect your fate║")
+print("╚══════════════════════════════════╝\n")
+
+# Scene 1 - The Dark Room
+print("─────────────────────────────────────────")
+print("You wake up in a dark, cold room...")
+print("You hear a faint whisper in the distance.")
+print(r"""
+      _______________________
+     |                       |
+     |       _________       |
+     |      |       |        |
+     |      |  BED  |        |
+     |      |_______|        |
+     |                       |
+     |   👀 Feeling the dark  |
+     |_______________________|
+""")
+choice1 = ""
+while choice1.lower() not in ["explore", "relax", "sleep"]:
+    choice1 = input("What will you do? (explore/relax/sleep): ")
+print(f"You chose: {choice1}\n")
+
+# Scene 2 - The Door
+print("─────────────────────────────────────────")
+print("There is a mysterious door in front of you...")
+print("Your memory tells you: The door seems locked.")
+print(r"""
+       __________
+      |  ____   |
+      | |    |  |
+      | | o  |  |
+      | |____|  |
+      |_________|
+""")
+choice2 = ""
+while choice2.lower() not in ["open", "wait", "peek"]:
+    choice2 = input("How do you handle the door? (open/wait/peek): ")
+print(f"You chose: {choice2}\n")
+
+# Scene 2 Twist
+if choice2.lower() == "open":
+    print("⚠️ Strangely, the door was actually locked. Your memory deceives you!")
+elif choice2.lower() == "wait":
+    print("⏳ Perhaps waiting was wiser, your memory is unclear...")
+else:
+    print("👁️ You peek through the crack and notice something mysterious!")
+
+# Scene 3 - The Strange Man
+print("─────────────────────────────────────────")
+print("A strange man approaches you...")
+print("You remember: He smiles at you in a weird way.")
+print(r"""
+        O
+       /|\
+       / \
+      /   \
+""")
+choice3 = ""
+while choice3.lower() not in ["approach", "avoid", "observe"]:
+    choice3 = input("What do you do about the man? (approach/avoid/observe): ")
+print(f"You chose: {choice3}\n")
+
+# Scene 3 Twist
+if choice3.lower() == "approach":
+    print("💨 The man suddenly disappears. Was it your imagination?")
+elif choice3.lower() == "avoid":
+    print("👀 You ignored him, but he was watching you from afar...")
+else:
+    print("🔍 You hide behind a column and notice strange markings around him.")
+
+# Scene 4 - The Notebook
+print("─────────────────────────────────────────")
+print("You find an old notebook on the table...")
+print("It seems to contain scrambled messages.")
+print(r"""
+   __________________
+  /                 /|
+ /                 / |
+/_________________/  |
+|                 |  |
+|       ???       |  |
+|_________________|/
+""")
+choice4 = ""
+while choice4.lower() not in ["yes", "no", "postpone"]:
+    choice4 = input("Do you read the notebook? (yes/no/postpone): ")
+print(f"You chose: {choice4}\n")
+
+# Ending based on choices
+print("─────────────────────────────────────────")
+print("=== Ending ===")
+if choice2.lower() == "open" and choice3.lower() == "approach" and choice4.lower() == "yes":
+    print("🌟 You uncovered the truth behind your memories! Happy ending.")
+elif choice2.lower() == "wait" and choice3.lower() == "avoid":
+    print("❓ The memories reveal nothing. Mysterious ending.")
+else:
+    print("⚠️ Your memories are mixed and the truth is lost... Open ending.")
+
+print("\n╔══════════════════════════════════╗")
+print("║       Thank you for playing!     ║")
+print("╚══════════════════════════════════╝")
+
